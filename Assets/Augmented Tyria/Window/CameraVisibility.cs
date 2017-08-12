@@ -10,7 +10,8 @@ public class CameraVisibility : MonoBehaviour
     public const string GameWindowTitle = "Guild Wars 2";
     public const string GameWindowClass = "ArenaNet_Dx_Window_Class";
 
-    public static bool Focused { get; private set; }
+    // public static bool Focused { get; private set; }
+    public const bool Focused = true; 
 #else
     public const bool Focused = true;
 #endif
@@ -37,7 +38,7 @@ public class CameraVisibility : MonoBehaviour
     private void LateUpdate()
     {
         IntPtr fore = WinAPI.GetForegroundWindow();
-        Focused = WinAPI.CompareTitleAndClass(fore, GameWindowTitle, GameWindowClass);
+        // Focused = WinAPI.CompareTitleAndClass(fore, GameWindowTitle, GameWindowClass);
 
         if (Focused)
         {
